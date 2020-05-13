@@ -6,16 +6,18 @@ function Card (props) {
     const {date, explanation, url, hdurl, title} = props.nasaData;
 
     return (
-        <div>
+        <>
+        <div className="image">
+            <a href={ hdurl }>
+                <img src={ url } alt={ title } />
+            </a>
+        </div>
+        <div className="description">
             <h1>{ title }</h1>
-            <p>
-                <a href={ hdurl }>
-                    <img src={ url } alt={ title } />
-                </a>
-            </p>
             <p className="date">Posted: { date }</p>
             <p>{ explanation }</p>
         </div>
+        </>
     );
 }
 
