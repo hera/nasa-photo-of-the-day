@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import Card from "../Card/Card.js";
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 20px #ddd;
+    border-radius: 10px;
+`
 
 function App() {
     let [nasaData, setNasaData] = useState(null);
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+        axios.get('http://127.0.0.1:8080/data.json')
             .then((request) => {
                 setNasaData(request.data);
             })
@@ -18,11 +28,15 @@ function App() {
 
     if (nasaData) {
         return (
-            <div className="container"><Card nasaData={nasaData} /></div>
+            <Container>
+                <Card nasaData={nasaData} />
+            </Container>
         );
     } else {
         return (
-            <div className="container"><h2>Loading...</h2></div>
+            <Container>
+                <h2>Loading...</h2>
+            </Container>
         );
     }
 }
