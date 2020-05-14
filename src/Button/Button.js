@@ -13,6 +13,11 @@ const Button = styled.a`
     text-decoration: none;
     border: 3px solid purple;
     margin-top: 30px;
+    transition: all 0.3s;
+    &:hover {
+        background-color: purple;
+        color: white;
+    }
 `
 
 export default Button;
