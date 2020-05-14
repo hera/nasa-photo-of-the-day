@@ -9,7 +9,7 @@ const Container = styled.div`
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 4px 20px #ddd;
+    box-shadow: 0px 4px 30px #ddd;
     border-radius: 10px;
 `
 

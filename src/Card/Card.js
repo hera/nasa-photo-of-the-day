@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-
+import React from "react";
 import styled from 'styled-components';
+import Button from '../Button/Button';
 
 const CardImage = styled.div`
+    background-color: white;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     img {
@@ -18,6 +19,7 @@ const CardImage = styled.div`
 `
 
 const CardDescription = styled.div`
+    background-color: white;
     padding: 50px;
     border: 1px solid #ddd;
     border-top: 0;
@@ -39,6 +41,9 @@ function Card (props) {
                 <h1>{ title }</h1>
                 <p className="date">Posted: { date }</p>
                 <p>{ explanation }</p>
+                <p>
+                    <Button href={ hdurl }>View the picture</Button>
+                </p>
             </CardDescription>
         </>
     );
